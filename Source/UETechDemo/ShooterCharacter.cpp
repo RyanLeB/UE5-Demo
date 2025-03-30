@@ -49,10 +49,10 @@ void AShooterCharacter::MoveRight(float AxisValue)
     AddMovementInput(GetActorRightVector() * AxisValue);
 }
 
-void AShooterCharacter::Jump()
-{
-    Super::Jump();
-}
+// void AShooterCharacter::Jump()
+// {
+//     Super::Jump();
+// }
 
 // void AShooterCharacter::LookUp(float AxisValue)	
 // {
