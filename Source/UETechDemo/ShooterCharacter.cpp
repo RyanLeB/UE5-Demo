@@ -44,6 +44,7 @@ void AShooterCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 	PlayerInputComponent->BindAxis(TEXT("LookHorizontal"), this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis(TEXT("LookHorizontalRate"), this, &AShooterCharacter::LookHorizontalRate);
 	PlayerInputComponent->BindAction(TEXT("Jump"), IE_Pressed, this, &AShooterCharacter::Jump);
+	PlayerInputComponent->BindAction(TEXT("Shoot"), IE_Pressed, this, &AShooterCharacter::Shoot);
 
 }
 
@@ -74,6 +75,12 @@ void AShooterCharacter::LookHorizontalRate(float AxisValue)
 {
     AddControllerYawInput(AxisValue * RotationRate * GetWorld()->GetDeltaSeconds());
 }
+
+void AShooterCharacter::Shoot()
+{
+	Gun->PullTrigger();
+}
+
 
 // Don't need this, just another way to implement it
 

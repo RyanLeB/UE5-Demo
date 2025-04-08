@@ -34,6 +34,7 @@ private:
 	void Jump();
 	void LookUpRate(float AxisValue);
 	void LookHorizontalRate(float AxisValue);
+	void Shoot();
 	// void LookUp(float AxisValue);
 
 	
