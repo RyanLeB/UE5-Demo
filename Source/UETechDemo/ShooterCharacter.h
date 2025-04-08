@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "ShooterCharacter.generated.h"
 
+class AGun;
+
 UCLASS()
 class UETECHDEMO_API AShooterCharacter : public ACharacter
 {
@@ -34,8 +36,17 @@ private:
 	void LookHorizontalRate(float AxisValue);
 	// void LookUp(float AxisValue);
 
+	
+
 	UPROPERTY(EditAnywhere)
 	float RotationRate = 10;
 
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<class AGun> GunClass;
+
+	UPROPERTY()
+	AGun* Gun;
+	
 	
 };
